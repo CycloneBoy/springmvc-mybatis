@@ -12,7 +12,16 @@
              http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- 开启注解 -->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven conversion-service="conversionService" />
+
+    <bean id="conversionService"
+          class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <bean class="com.cycloneboy.springmvc.utils.CustomDateConverter"/>
+            </list>
+        </property>
+    </bean>
 
     <!-- 自动扫描装配 -->
     <context:component-scan base-package="com.cycloneboy.springmvc.controller" />

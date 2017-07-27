@@ -11,4 +11,8 @@ import java.util.List;
 public interface ItemsService {
 
     public List<ItemsCustom> findItemsList(ItemsQueryVo itemsQueryVo) throws Exception;
+
+    public ItemsCustom findItemsById(Integer id);
+
+    public void updateItems(ItemsCustom itemsCustom);
 }
