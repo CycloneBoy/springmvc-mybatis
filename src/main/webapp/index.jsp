@@ -12,7 +12,7 @@
   </head>
   <body>
         <h1>商品订单测试主页</h1>
-        <a href="${ctx}/items/queryItems">查询所有</a>
-
+        <a href="${ctx}/items/queryItems">查询所有</a><br/>
+        <a href="${ctx}/person/register">注册页面(person)</a>
   </body>
 </html>

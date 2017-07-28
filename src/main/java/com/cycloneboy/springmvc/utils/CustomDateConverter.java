@@ -13,11 +13,12 @@ public class CustomDateConverter implements Converter<String,Date>{
 
     @Override
     public Date convert(String source) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:MM:ss");
         try {
             return  simpleDateFormat.parse(source);
         }catch (ParseException e){
             e.printStackTrace();
+            System.out.println("日期转换失败");
         }
 
         return  null;
