@@ -16,8 +16,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
@@ -95,7 +97,31 @@ public class PersonController {
 
     @RequestMapping(value = "/registerFrom",method = RequestMethod.GET)
     public String registerForm(Model model){
-
         return "person/registerForm";
+    }
+
+    @RequestMapping(value = "/loginForm",method = RequestMethod.GET)
+    public String loginForm(Model model){
+        Person person = new Person();
+        model.addAttribute("person",person);
+        return "person/loginForm";
+    }
+
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public ModelAndView login(String loginname, String password, ModelAndView mv,
+                              HttpSession session){
+        if(loginname != null && loginname.equals("root")
+                && password!=null && password.equals("123456")){
+            Person person = new Person();
+            person.setLoginname(loginname);
+            person.setPassword(password);
+            person.setUsername("管理员");
+            session.setAttribute("user",person);
+            mv.setViewName("redirect:/json/main");
+        }else{
+            mv.addObject("message","登录名或密码错误，请重新输入!");
+            mv.setViewName("person/loginForm");
+        }
+        return  mv;
     }
 }
