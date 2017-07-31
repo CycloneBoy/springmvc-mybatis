@@ -16,6 +16,8 @@
         <a href="${ctx}/person/register">注册页面(person)</a><br/>
         <a href="${ctx}/json/index">ajax 请求json 测试</a><br/>
         <a href="${ctx}/json/testjson">ajax 发送post,返回json格式数据测试</a><br/>
-        <a href="${ctx}/json/main">拦截器测试主页</a><br/>
+        <a href="${ctx}/json/main">拦截器测试主页</a><br/><br/>
+
+        <a href="${ctx}/shiro/admin">admin主页</a><br/>
   </body>
 </html>

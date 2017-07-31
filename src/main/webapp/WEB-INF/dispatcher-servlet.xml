@@ -104,12 +104,12 @@
     </bean>
 
     <!-- 配置拦截器 -->
-    <mvc:interceptors>
-        <!-- 多个拦截器，按顺序执行 -->
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/> <!-- 拦截所有的url包括子url路径 -->
-            <bean class="com.cycloneboy.springmvc.interceptor.AuthorizationInterceptor"/>
-        </mvc:interceptor>
-        <!-- 其他拦截器 -->
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--&lt;!&ndash; 多个拦截器，按顺序执行 &ndash;&gt;-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/> &lt;!&ndash; 拦截所有的url包括子url路径 &ndash;&gt;-->
+            <!--<bean class="com.cycloneboy.springmvc.interceptor.AuthorizationInterceptor"/>-->
+        <!--</mvc:interceptor>-->
+        <!--&lt;!&ndash; 其他拦截器 &ndash;&gt;-->
+    <!--</mvc:interceptors>-->
 </beans>
